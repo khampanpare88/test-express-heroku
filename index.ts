@@ -25,7 +25,7 @@ const readDbFile = () : DB => {
   const db: DB = JSON.parse(raw)
   return db
 }
-
+    
 app.get('/person', (req,res) => {
   res.status(200)
   res.json(readDbFile())
