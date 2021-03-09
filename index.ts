@@ -9,11 +9,17 @@ interface Person{
   name: string;
   age: number;
 }
+
+interface DbSchema {
+  users: User[]
+}
+
 interface User {
   id: number
   username: string
   password: string
 }
+
 
 interface DB{
   persons: Array<Person>
