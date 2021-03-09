@@ -75,7 +75,7 @@ app.post<any, any, RegisterArgs>('/register',
     const hashPassword = bcrypt.hashSync(password, 10)
     db.users.push({
       id: Date.now(),
-      username,
+      username: req.body.username,
       password: hashPassword,
     })
     fs.writeFileSync('db.json', JSON.stringify(db))
