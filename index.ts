@@ -22,7 +22,7 @@ interface User {
 
 
 interface DB{
-  persons: Array<Person>
+  persons: Array<Person | User>
 }
 
 // init database file
@@ -70,9 +70,8 @@ app.post<any, any, RegisterArgs>('/register',
       return
     }
 
-    const { username, password } = req.body
     const db = readDbFile()
-    const hashPassword = bcrypt.hashSync(password, 10)
+    const hashPassword = bcrypt.hashSync(req.body.password, 10)
     db.users.push({
       id: Date.now(),
       username: req.body.username,
