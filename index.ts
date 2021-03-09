@@ -27,7 +27,7 @@ interface DB{
 
 // init database file
 const initialDb: DB = {
-  persons: []
+  users: []
 }
 fs.writeFileSync('db.json', JSON.stringify(initialDb))
 
