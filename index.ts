@@ -49,10 +49,7 @@ app.post('/person', (req, res) => {
 
 const port = process.env.PORT || 3000
 
-app.listen(port, () => {
-  console.log(`  App is running at port ${port}`)
-  console.log("  Press CTRL-C to stop\n");
-})
+
 type RegisterArgs = Omit<User, 'id'>
 
 app.post<any, any, RegisterArgs>('/register', 
@@ -100,4 +97,9 @@ app.post<any, any, LoginArgs>('/login', (req, res) => {
     SECRET_KEY
   )
   res.json({ token })
+})
+
+app.listen(port, () => {
+  console.log(`  App is running at port ${port}`)
+  console.log("  Press CTRL-C to stop\n");
 })
