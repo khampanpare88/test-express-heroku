@@ -22,7 +22,7 @@ interface User {
 
 
 interface DB{
-  persons: Array<Person | User>
+  users: Array<User>
 }
 
 // init database file
